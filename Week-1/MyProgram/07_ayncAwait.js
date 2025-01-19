@@ -28,12 +28,12 @@ function asyncFunction(){
     
 // }
 
-async function main(){
+async function mainFunc(){
     let value = await asyncFunction();
     // after 3 seconds both are log
     console.log("hi there 2") // hi there 2
     console.log(value); // hi There
     
 }
-main()
+mainFunc()
 console.log("hi there 3 ");

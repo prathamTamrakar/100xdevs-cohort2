@@ -1,15 +1,14 @@
 {
-  "dependencies": {
-    "express": "^4.21.2"
-  },
   "name": "programs",
   "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "01_middlewares.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }

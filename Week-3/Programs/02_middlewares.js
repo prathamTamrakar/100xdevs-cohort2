@@ -1,6 +1,8 @@
 const express = require("express")
 const app = express()
 
+app.use(express.json()) // Returns middleware that only parses json and only looks at requests where the Content-Type header matches the type option.
+
 function userMiddleware(req, res, next) {
     const username = req.headers.username
     const password = req.headers.password

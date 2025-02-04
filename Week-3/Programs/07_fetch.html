@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function getAnimalData() {
+            // alert("Animal Data is being fetched");
+
+            // by default fetch sends a GET request
+            // const response = fetch('https://fakerapi.it/api/v1/persons',{
+            //     method: 'POST'
+            // })
+
+            // const response = fetch('https://fakerapi.it/api/v1/persons')
+            // console.log(response);
+            // it return promise pending
+
+            // fetch('https://fakerapi.it/api/v1/persons').then(function (response) {
+            //     // console.log(response.json()) // promise pending
+
+            //     response.json().then(function (data) {
+            //         console.log(data);
+            //     })
+
+            // })
+
+            const response = await fetch('https://fakerapi.it/api/v1/persons')
+            const data = await response.json()
+            console.log(data);
+            document.getElementById('container').innerHTML = JSON.stringify(data)
+        }
+    </script>
+    <div id="container">
+
+    </div>
+    <button onclick="getAnimalData()">GetAnimal Data</button>
+</body>
+
+</html>

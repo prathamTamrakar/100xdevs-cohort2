@@ -14,12 +14,12 @@ const User = mongoose.model("User", {
   password: String,
 });
 
-const user = new User({
-  name: "raj",
-  email: "rajjaiswal@gmail.com",
-  password: "123456",
-})
-user.save()
+// const user = new User({
+//   name: "raj",
+//   email: "rajjaiswal@gmail.com",
+//   password: "123456",
+// })
+// user.save()
 
 const app = express();
 app.use(express.json());

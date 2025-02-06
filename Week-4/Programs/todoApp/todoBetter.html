@@ -22,12 +22,6 @@
     <script>
 
         let globalId = 0
-
-        function markAsDone(id) {
-            const parent = document.getElementById(id)
-            parent.childNodes[2].innerHTML = "Done"
-        }
-
         function createChild(tittle,description,id){
             const child = document.createElement('div')
             const firstGrandChild = document.createElement('div')
@@ -47,40 +41,33 @@
             return child;
 
         }
-        function addTodo() {
-            const tittle = document.myform.tittle.value
-            const description = document.myform.description.value
-
-            // const div = document.createElement('div')
-            // document.body.appendChild(div)
-
-            // div.style.backgroundColor = "yellow"
-
-            // const innerDiv1 = document.createElement('div')
-            // const innerDiv2 = document.createElement('div')
-            // innerDiv1.innerHTML = tittle
-            // innerDiv2.innerHTML = description
-
-            // const button = document.createElement('button')
-            // button.innerText = "Mark as done"
-            // div.appendChild(innerDiv1)
-            // div.appendChild(innerDiv2)
-            // div.appendChild(button)
-
+        // state will always be a array
+        // every element of the state would have a tittle, description and id
+        function updateDom(state){
             const parent = document.getElementById('container')
-
-            // const originalHtml = document.getElementById('container').innerHTML
-            // document.getElementById('container').innerHTML = originalHtml +
-            // `<div>
-            //     <div>${tittle}</div>
-            //     <div>${description}</div>
-            //     <button>Mark as done</button>
-            // </div>`
-
-            parent.appendChild(createChild(tittle, description,globalId++))
-
+            parent.innerHTML = ''
+            state.forEach((element)=>{
+                const child = createChild(element.tittle,element.description,element.id)
+                parent.appendChild(child)
+            })
         }
-
+        updateDom([
+            {
+                tittle: 'Go to market',
+                description: 'Buy some fruits',
+                id: 0
+            },
+            {
+                tittle: 'Go to gym',
+                description: 'Do some exercise',
+                id: 1
+            },
+            {
+                tittle: 'Go to school',
+                description: 'Learn something',
+                id: 2
+            }
+        ])
     </script>
 </body>
 

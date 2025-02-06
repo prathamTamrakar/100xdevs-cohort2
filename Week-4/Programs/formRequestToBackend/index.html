@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <form name="myform" method="post">
+        <input type="text" name="first" placeholder="first number">
+        <br><br>
+        <input type="text" name="second" placeholder="second number">
+        <br><br>
+        <input type="button" value="Calculate Sum" onclick="sum()">
+    </form>
+    <script>
+        function sum() {
+            let firstNum = document.myform.first.value;
+            let secondNum = document.myform.second.value;
+
+            fetch("http://localhost:3000/sum?a=" + firstNum + "&b=" + secondNum)
+                .then(response => response.text())
+                .then(data => {
+                    let p = document.createElement("p");
+                    p.innerHTML = "sum is: " + data;
+                    document.body.appendChild(p);
+                });
+
+            // how add result in the p tag by made 
+            // let p = document.createElement("p");
+            // p.innerHTML = "sum is: " + result;
+            // document.body.appendChild(p);
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- 
+app.get("/sum", (req, res) => {
+    const a = parseInt(req.query.a);
+    const b = parseInt(req.query.b);
+    const sum = a + b;
+    res.send(sum.toString());
+  }); 
+-->

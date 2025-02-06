@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form method="POST" name="myform">
+        <input type="text" name="tittle" placeholder="tittle">
+        <br><br>
+        <input type="text" name="description" placeholder="description">
+        <br><br>
+        <input onclick="addTodo()" type="button" value="Add">
+    </form>
+    <div id="container"></div>
+    <script>
+        function addTodo() {
+            const tittle = document.myform.tittle.value
+            const description = document.myform.description.value
+
+            // const div = document.createElement('div')
+            // document.body.appendChild(div)
+
+            // div.style.backgroundColor = "yellow"
+
+            // const innerDiv1 = document.createElement('div')
+            // const innerDiv2 = document.createElement('div')
+            // innerDiv1.innerHTML = tittle
+            // innerDiv2.innerHTML = description
+
+            // const button = document.createElement('button')
+            // button.innerText = "Mark as done"
+            // div.appendChild(innerDiv1)
+            // div.appendChild(innerDiv2)
+            // div.appendChild(button)
+
+            const originalHtml = document.getElementById('container').innerHTML
+            document.getElementById('container').innerHTML = originalHtml +
+            `<div>
+                <div>${tittle}</div>
+                <div>${description}</div>
+                <button>Mark as done</button>
+            </div>`
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -22,7 +22,7 @@
             let firstNum = document.myform.first.value;
             let secondNum = document.myform.second.value;
 
-            fetch("http://localhost:3000/sum?a=" + firstNum + "&b=" + secondNum)
+            fetch("http://localhost:8080/sum?a=" + firstNum + "&b=" + secondNum)
                 .then(response => response.text())
                 .then(data => {
                     let p = document.createElement("p");

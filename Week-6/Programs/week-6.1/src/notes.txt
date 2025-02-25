@@ -1,0 +1,7 @@
+lifecycle feature
+class based component 
+functon based component
+
+Hooks in React are functions that allow you to "hook 
+into" React state and lifecycle features from function 
+components.

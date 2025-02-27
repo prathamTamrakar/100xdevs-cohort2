@@ -5,7 +5,7 @@ import {useState,memo}from "react";
 import Keys from './Keys';
 import CardWrapper from './CardWraaper'
 import TextComponent from './TextComponent'
-import UseEffectExample from "./useEffect";
+import UseEffectExample from "./UseEffect";
 
 
 function App() {

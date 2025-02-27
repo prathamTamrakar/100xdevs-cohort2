@@ -33,9 +33,9 @@ const todos = [{
 }]
 
 app.get("/todo", (req, res) => {
-  const todo = todos.find(t => t.id == req.query.id);
+  const todoss = todos.find(t => t.id == req.query.id);
   res.json({
-    todo
+    todoss
   })
 })
 

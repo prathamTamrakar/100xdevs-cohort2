@@ -7,6 +7,7 @@
 
 
 import { useState, useEffect } from "react";
+import axios from "axios"
 
 function UseEffectExample() {
     const [todos, setTodos] = useState([]);
@@ -14,13 +15,18 @@ function UseEffectExample() {
     // we cant use async in the useEffect 
     // useAsyncEffect
     useEffect(() => {
-        setInterval(() => {
-            fetch("http://localhost:8080/todos")
-                .then(async function (res) {
-                    const json = await res.json();
-                    setTodos(json.todos)
-                })
-        }, 100)
+        // setInterval(() => {
+        //     fetch("http://localhost:8080/todos")
+        //         .then(async function (res) {
+        //             const json = await res.json();
+        //             setTodos(json.todos)
+        //         })
+        // }, 100)
+
+        axios.get("http://localhost:8080/todos")
+        .then(function(res){
+            setTodos(res.data.todos)
+        })
     }, [])
 
     return (

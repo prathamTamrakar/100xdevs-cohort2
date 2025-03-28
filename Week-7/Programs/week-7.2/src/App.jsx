@@ -5,12 +5,12 @@ export default function App() {
   return (
     <div>
         <RecoilRoot>
-          <Count />
+          <Count /> 
         </RecoilRoot>
     </div>
   )
 }
-
+// re-rendering
 function Count() {
   return (
     <div>

@@ -33,9 +33,9 @@ const todos = [{
 }]
 
 app.get("/todo", (req, res) => {
-  const todoss = todos.find(t => t.id == req.query.id);
+  const todo = todos.find(t => t.id == req.query.id);
   res.json({
-    todoss
+    todo
   })
 })
 
@@ -85,4 +85,6 @@ app.get("/notifications", (req, res) => {
 
 })
 
-app.listen(8080)
+app.listen(8080,()=>{
+  console.log("Server is running on port 8080")
+})

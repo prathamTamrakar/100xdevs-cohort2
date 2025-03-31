@@ -7,3 +7,6 @@ export const todosAtomFamily = atomFamily({
     return TODOS.find(x => x.id === id)
   },
 });
+
+// atomFamily return a function that takes an id and returns the atom
+

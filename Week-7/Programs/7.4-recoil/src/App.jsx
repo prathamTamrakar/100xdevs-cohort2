@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { RecoilRoot, useRecoilValue, useSetRecoilState } from 'recoil'
 import { jobsAtom, messagingAtom, networkAtom, notificationsAtom, totalNotificationSelector } from './atoms'
 
@@ -6,7 +7,7 @@ function App() {
   return <RecoilRoot>
     <MainApp />
   </RecoilRoot>
-};
+}
 
 
 function MainApp() {

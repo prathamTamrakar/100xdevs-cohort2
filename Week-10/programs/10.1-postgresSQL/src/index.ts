@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
 
 import { Client } from "pg";
 
 const client = new Client({
-    connectionString: "postgresql://prathamtamrakar:npg_dQOxMhnN2aE3@ep-weathered-block-a12fcqj4-pooler.ap-southeast-1.aws.neon.tech/test?sslmode=require"
+    connectionString: process.env.DATABASE_URL
 })
 
 async function connectToDatabase() {
@@ -48,7 +50,7 @@ async function insert() {
 // other way of writing
 async function insertData() {
     const client = new Client({
-        connectionString: "postgresql://prathamtamrakar:npg_dQOxMhnN2aE3@ep-weathered-block-a12fcqj4-pooler.ap-southeast-1.aws.neon.tech/test?sslmode=require"
+        connectionString: process.env.DATABASE_URL
     })
     try {
         await client.connect();
@@ -118,12 +120,12 @@ async function deleteUser(email: string) {
 
 connectToDatabase()
   .then(async () => {
-    await insertUser("anshu2", "anshu2@gmail.com", "12345")    // You can add more users here by calling this function multiple times with different values
+    // await insertUser("anshu2", "anshu2@gmail.com", "12345")    // You can add more users here by calling this function multiple times with different values
 
     // await insertUser('prathamSharma','prathamsharma@gmail.com','pratham@123')
 
     // await getUser('anshu2@gmail.com')
-    // await getAllUser()
+    await getAllUser()
     // await deleteUser('anshu2@gmail.com')
     // await deleteUser('prathamsharma@gmail.com')
 

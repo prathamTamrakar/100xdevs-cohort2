@@ -12,8 +12,12 @@
   "description": "",
   "dependencies": {
     "@types/pg": "^8.11.13",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "nodemon": "^3.1.9",
     "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
   }
 }

@@ -8,10 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const pg_1 = require("pg");
 const client = new pg_1.Client({
-    connectionString: "postgresql://prathamtamrakar:npg_dQOxMhnN2aE3@ep-weathered-block-a12fcqj4-pooler.ap-southeast-1.aws.neon.tech/test?sslmode=require"
+    connectionString: process.env.DATABASE_URL
 });
 function connectToDatabase() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -60,7 +65,7 @@ function insert() {
 function insertData() {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new pg_1.Client({
-            connectionString: "postgresql://prathamtamrakar:npg_dQOxMhnN2aE3@ep-weathered-block-a12fcqj4-pooler.ap-southeast-1.aws.neon.tech/test?sslmode=require"
+            connectionString: process.env.DATABASE_URL
         });
         try {
             yield client.connect();
@@ -134,10 +139,10 @@ function deleteUser(email) {
 }
 connectToDatabase()
     .then(() => __awaiter(void 0, void 0, void 0, function* () {
-    yield insertUser("anshu2", "anshu2@gmail.com", "12345"); // You can add more users here by calling this function multiple times with different values
+    // await insertUser("anshu2", "anshu2@gmail.com", "12345")    // You can add more users here by calling this function multiple times with different values
     // await insertUser('prathamSharma','prathamsharma@gmail.com','pratham@123')
     // await getUser('anshu2@gmail.com')
-    // await getAllUser()
+    yield getAllUser();
     // await deleteUser('anshu2@gmail.com')
     // await deleteUser('prathamsharma@gmail.com')
 }))

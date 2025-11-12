@@ -1,5 +1,7 @@
-export default function Signin() {
-    return <div className="h-screen flex justify-center flex-col ">
+import React from 'react'
+
+function Signin() {
+   return <div className="h-screen flex justify-center flex-col ">
         <div className="flex justify-center ">
             <a href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
                 <div>
@@ -17,6 +19,7 @@ export default function Signin() {
             </a>
         </div>
     </div>
+
 }
 
 interface LabelledInputType {
@@ -31,3 +34,5 @@ function LabelledInput({ label, placeholder, type }: LabelledInputType) {
         <input type={type || "text"} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder={placeholder} required />
     </div>
 }
+
+export default Signin

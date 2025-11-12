@@ -1,0 +1,7 @@
+import Signin from '@/components/Signin'
+export default function SigninPage() {
+    return <div>
+        <Signin />
+    </div>
+}
+
